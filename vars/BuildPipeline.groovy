@@ -23,8 +23,11 @@ def call (body) {
 
             stage('Checkout'){
                 steps{
-                    echo "Checking Out Git Repo"
-                    new Checkout().checkOutFrom("HelloWorld_Java")
+                    script {
+                        echo "Checking Out Git Repo"
+                        def checkoutToGit = new CheckoutGit()
+                        checkoutToGit.checkOutFrom("HelloWorld_Java")
+                    }
                 }
             }
         }
