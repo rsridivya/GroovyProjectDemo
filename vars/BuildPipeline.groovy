@@ -1,5 +1,4 @@
-import pkg
-
+import pkg.CheckoutGit
 
 def call (body) {
     def config = [:]
@@ -26,7 +25,7 @@ def call (body) {
                     script {
                         echo "Checking Out Git Repo"
                         def checkoutToGit = new CheckoutGit()
-                        checkoutToGit.checkOutFrom("HelloWorld_Java")
+                        echo  """X Value : ${checkoutToGit.x} &  Y Value: ${checkoutToGit.y}"""
                     }
                 }
             }

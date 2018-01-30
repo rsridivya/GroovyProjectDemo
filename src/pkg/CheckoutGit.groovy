@@ -1,7 +1,11 @@
-package pkg
+package pkg;
 
-def checkOutFrom(repo) {
-    git url: "https://github.com/rsridivya/${repo}.git"
+class CheckoutGit {
+    float x,y
+
+    CheckoutGit(){
+        this.x = 10
+        this.y = 20
+    }
+
 }
-
-return this
