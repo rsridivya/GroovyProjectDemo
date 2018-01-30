@@ -1,3 +1,6 @@
+import pkg
+
+
 def call (body) {
     def config = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
@@ -14,7 +17,14 @@ def call (body) {
         stages{
             stage('Build'){
                 steps{
-                    echo "Build"
+                    echo "First Stage Check"
+                }
+            }
+
+            stage('Checkout'){
+                steps{
+                    echo "Checking Out Git Repo"
+                    new Checkout().checkOutFrom("HelloWorld_Java")
                 }
             }
         }
